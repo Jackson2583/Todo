@@ -75,7 +75,7 @@ export default function Explore({ setCurrentView }) {
                     borderRadius: "12px",
                     boxShadow: "0 10px 30px rgba(0,0,0,0.05)" // 對齊履歷的卡片陰影
                 }}>
-                    <div style={{ color: "#3498db", fontSize: "1.1rem", fontWeight: "bold", marginBottom: "5px" }}>Explore</div>
+                    <div style={{ color: "#3498db", fontSize: "1.1rem", fontWeight: "bold", marginBottom: "5px" }}>Keep going</div>
                     <h2 style={{ 
                         margin: "0 0 15px 0", 
                         fontSize: "2rem", 
@@ -84,7 +84,7 @@ export default function Explore({ setCurrentView }) {
                         display: "inline-block",
                         paddingBottom: "10px"
                     }}>
-                        今日一句鼓勵
+                        召喚正能量
                     </h2>
                     <p style={{ color: "#7f8c8d", marginBottom: "25px", fontSize: "1.1rem" }}>
                         無論進度如何，每天都給自己一點正能量吧！
