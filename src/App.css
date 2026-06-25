@@ -5,70 +5,100 @@
 }
 
 body {
-  /* 只保留字體設定，移除背景色與 Flex 排版，避免干擾履歷頁面 */
-  font-family: sans-serif;
+  font-family: 'Segoe UI', 'Microsoft JhengHei', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 這是新增的專屬外框，用來取代原本的 body 樣式 */
+/* 整個待辦事項的背景 (對齊履歷的淺灰白) */
 .todo-container {
-  background-color: #3b36cc;
-  color: white;
+  background-color: #f4f7f6;
+  color: #333;
   display: flex;
   justify-content: center;
-  min-height: 100vh; /* 確保紫色背景能填滿整個螢幕高度 */
-  padding-top: 40px; /* 讓 Todo 列表與上方的選單保持一點距離 */
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
+/* 待辦事項的主卡片 (對齊履歷的白色卡片) */
 .wrapper {
-  width: 450px;
-  padding: 30px;
-  background-color: #1a1a40;
-  border-radius: 5px;
-  /* 移除了原本的 margin-top: 20px，改由 .todo-container 統一控制 */
+  width: 500px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   text-align: center;
-  height: fit-content; /* 確保外框高度隨內容自動調整 */
+  height: fit-content;
 }
 
+/* 標題樣式 (對齊履歷的藍色底線標題) */
+.wrapper h1 {
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  border-bottom: 3px solid #3498db;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* 輸入框外觀優化 */
 .create-form {
-  height: 40px;
+  height: 45px;
   width: 100%;
-  margin: 25px 0px;
-  border: 1px solid #3b36cc;
+  margin: 20px 0px 30px 0px;
+  border: 1px solid #bdc3c7;
+  border-radius: 30px;
   display: flex;
+  overflow: hidden;
+  background: white;
 }
 
 .create-form > input {
   outline: none;
   border: none;
   background: none;
-  color: white;
+  color: #2c3e50;
   width: 100%;
   height: 100%;
-  padding-left: 10px;
+  padding-left: 20px;
+  font-size: 1rem;
+}
+
+.create-form > input::placeholder {
+  color: #95a5a6;
 }
 
 .create-form > button {
   border: none;
-  background-color: #3636cc;
+  background-color: #3498db;
   color: white;
-  width: 50px;
+  width: 90px;
   height: 100%;
   cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-/* 待辦事項外框 */
+.create-form > button:hover {
+  background-color: #2980b9;
+}
+
+/* 單一待辦事項外框 */
 .todo {
-  background-color: #3b36cc;
-  min-height: 40px;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
+  background-color: #f1f2f6; /* 淺灰底色 */
+  border-left: 4px solid #3498db; /* 藍色重點邊框 */
+  min-height: 50px;
+  padding: 12px 20px;
+  margin-top: 15px;
+  border-radius: 0 8px 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #2c3e50;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-/* 文字區塊排版 */
 .todo-text {
   display: flex;
   flex-direction: column;
@@ -78,18 +108,10 @@ body {
   text-align: left;
 }
 
-/* 防呆極端測試：斷行機制 */
 .todo-text p {
   word-break: break-all;
   overflow-wrap: break-word;
   margin: 0;
-}
-
-/* 時間戳記樣式 */
-.timestamp {
-  font-size: 0.75rem;
-  color: #a1a1aa;
-  margin-top: 4px;
 }
 
 .todo-icons {
@@ -97,7 +119,13 @@ body {
   align-items: center;
 }
 
+/* 已完成的樣式 */
+.completed {
+  opacity: 0.6;
+  border-left: 4px solid #95a5a6; /* 完成後邊框變灰色 */
+}
+
 .completed p {
-  opacity: 0.4;
-  text-decoration: line-through 3px black;
+  text-decoration: line-through 2px #7f8c8d;
+  color: #7f8c8d;
 }
