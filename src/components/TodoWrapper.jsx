@@ -11,6 +11,12 @@ function TodoWrapper() {
       isEditing: false,
     },
     {
+      content: "購買晚餐",
+      id: Math.random(),
+      isCompleted: false,
+      isEditing: false,
+    },
+    {
       content: "寫作業",
       id: Math.random(),
       isCompleted: true,
@@ -62,7 +68,7 @@ function TodoWrapper() {
   };
   return (
     <div className="wrapper">
-      <h1>待辦事項</h1>
+      <h1>聖傑的待辦事項</h1>
       <CreateForm addTodo={addTodo} />
       {todos.map((todo) => {
         return (
